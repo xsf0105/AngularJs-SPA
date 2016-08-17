@@ -1,4 +1,4 @@
-## AngularJs+require.js+gulp 项目框架Example
+# AngularJs+require.js+gulp 项目框架Example
 =================
 
 New dashboard created using angularAMD+RequireJs+Angular-Material
