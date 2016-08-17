@@ -1,0 +1,24 @@
+<div class="logo-container">
+	大LOGO
+</div>
+
+<div class="right-container">
+	<div class="i-dropdown">
+
+		<md-select ng-model="selectedUser">
+			<md-option ng-value="user" ng-repeat="user in users">{{ user.name }}</md-option>
+		</md-select>
+
+	</div>
+	<div class="profile fr">
+		<div class="user">
+			<div class="user-img">
+				<md-select ng-model="rightMenuFlag">
+					<md-option value="logout">退出</md-option>
+				</md-select>
+			</div>
+			<div class="username">大师兄是我</div>
+		</div>
+
+	</div>
+</div>

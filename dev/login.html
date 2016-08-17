@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script data-main="js/login" src="lib/requirejs/require.js"></script>
+</head>
+
+<body>
+    <div class="login-wrap">
+        <div class="container">
+            <div class="content clearfix">
+                <div class="title">
+                    <h1 class="web-font">怀远后台界面登录</h1>
+                    <div class="article">
+                        <div class="phone-num">
+                            <p><i></i>手机号码<span> / 账号 </span></p>
+                            <!-- 多角色 -->
+                            <!--<input id="username" type="text" onkeydown="keydown(event)" placeholder="请输入手机号码" value="18757563157">-->
+                            <!-- 单角色 -->
+                            <input id="username" type="text" onkeydown="keydown(event)" placeholder="请输入手机号码" value="15168239361">
+                        </div>
+                        <div class="pwd">
+                            <p><i></i>登录密码</p>
+                            <input id="password" type="password" onkeydown="keydown(event)" placeholder="请输入密码" value="cs123456">
+                            <!-- <a href="">忘记密码？</a> -->
+                        </div>
+
+                       <!--  <div class="idtf-code">
+                            <p><i></i>验证码</p>
+                            <input type="text" placeholder="请输入图中的验证码">
+                            <p class="id-code">6321</p>
+                        </div> -->
+
+                        <div class="login-btn fr">
+                            <p>
+                                <button onclick="login()">登录</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

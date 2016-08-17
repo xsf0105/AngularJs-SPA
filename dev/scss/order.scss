@@ -1,0 +1,1497 @@
+@charset "utf-8";
+@import "utilities/variables";
+// 订单管理
+/* Material 样式覆盖 */
+.md-datepicker-calendar-pane {
+    * {
+        box-sizing: content-box!important;
+    }
+}
+.md-button {
+    margin: 0;
+}
+.md-datepicker-input-container {
+    border: none;
+}
+
+
+
+.order {
+    height: 100%;
+    // 搜索
+    .srh {
+        width: 100%;
+        margin-bottom: 20px;
+        position: relative;
+        input {
+            background: #f5f8f9;
+            width: 100%;
+            border: none;
+            height: 40px;
+            padding-left: 8px;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 80px;
+            position: absolute;
+            right: 0;
+            background: #fff;
+            top: 0;
+            height: 40px;
+        }
+    }
+    // 时间选择
+    .time-picker {
+        margin-bottom: 20px;
+    }
+    // 顶部菜单
+    .toper-menu {
+        padding-top: 10px;
+        box-shadow: 0px 2px 3px #eee;
+        width: 100%;
+        position: relative;
+        z-index: 9;
+        md-radio-button,
+        .md-switch-thumb {
+            display: inline-block;
+            margin-right: 32px;
+            span {
+                font-size: 14px;
+            }
+        }
+    }
+    // 1.预订确认
+    .order-wrapper {
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        .order-nav {
+            background-color: #e5edf1;
+            ul {
+                height: 60px;
+                margin-left: -1px;
+                li {
+                    min-width: 140px;
+                    height: 60px;
+                    line-height: 60px;
+                    color: #85aabc;
+                    font-size: 14px;
+                    float: left;
+                    border-top-left-radius: 4px;
+                    border-top-right-radius: 4px;
+                    position: relative;
+                    button {
+                        width: 100%;
+                        height: 100%;
+                        margin: 0;
+                        padding: 0 40px;
+                        text-align: center;
+                        border-radius: 0;
+                    }
+                    button:hover {
+                        background: #fff;
+                        opacity: 0.5;
+                    }
+                    > span {
+                        display: inline-block;
+                        height: 100%;
+                        padding: 0 40px;
+                        text-align: center;
+                        height: 61px;
+                        background-color: #fff;
+                        color: #000;
+                        border-top-left-radius: 4px;
+                        border-top-right-radius: 4px;
+                    }
+                    .dot {
+                        display: inline-block;
+                        width: 8px;
+                        vertical-align: middle;
+                        height: 8px;
+                        border-radius: 4px;
+                        background: #e60012;
+                        position: absolute;
+                        right: 22%;
+                        top: 35%;
+                    }
+                    &.active {
+                        height: 61px;
+                        background-color: #fff;
+                        color: #000;
+                    }
+                }
+            }
+        }
+        .order-detail {
+            height: 100%;
+            // 内容
+            .order-wrapper {
+                padding: 20px;
+                overflow: auto;
+                .add-book-order {
+                    line-height: 70px;
+                    padding: 0 20px;
+                    height: 70px;
+                    border: $border;
+                    font-size: 14px;
+                    color: #2f3a4d;
+                    font-family: '微软雅黑';
+                    font-weight: bold;
+                    box-shadow: 0px 2px 3px 1px #ddd;
+                    margin-bottom: 20px;
+                    i {
+                        font-style: normal;
+                        font-weight: normal;
+                        margin-right: 16px;
+                        &::before {
+                            font-family: "iconfont" !important;
+                            content: attr(data-icon);
+                            display: inline-block;
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .order-list {
+                    background-color: #fff;
+                    ul {
+                        .unRead {
+                            box-shadow: 0px 0px 4px #f87737;
+                        }
+                        li {
+                            margin-bottom: 20px;
+                            .order-header {
+                                background-color: #e5edf1;
+                                line-height: 38px;
+                                height: 38px;
+                                padding: 0 10px;
+                                border: $border;
+                                position: relative;
+                                p {
+                                    font-size: 12px;
+                                    display: inline-block;
+                                    line-height: 38px;
+                                }
+                                .time {
+                                    color: #2f3a4d;
+                                    letter-spacing: 1px;
+                                }
+                                [data-icon]::before {
+                                    margin-right: 10px;
+                                }
+                                .print {
+                                    font-size: 12px;
+                                    color: #2f3a4d;
+                                    margin-right: 12px;
+                                }
+                                .order-num {
+                                    color: #becbe3;
+                                    button {
+                                        background: #fff;
+                                        border: $border;
+                                        line-height: 20px;
+                                        color: #becbe3;
+                                        margin-left: 10px;
+                                        border-radius: 4px;
+                                        &::before {
+                                            margin-right: 10px;
+                                        }
+                                    }
+                                    .hoverLnk {
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                            .order-body {
+                                border: $border;
+                                padding: 20px;
+                                width: 100%;
+                                border-top: none;
+                                // 左1
+                                .order-info {
+                                    display: inline-block;
+                                    width: 80%;
+                                    .user-info {
+                                        margin-bottom: 30px;
+                                        img {
+                                            width: 46px;
+                                            height: 46px;
+                                            border-radius: 23px;
+                                            border: $border;
+                                            margin-right: 16px;
+                                        }
+                                        div {
+                                            display: inline-block;
+                                            vertical-align: top;
+                                            padding-top: 7px;
+                                            p {
+                                                color: #2f3a4d;
+                                            }
+                                            .name {
+                                                color: #a9c1ce;
+                                                font-size: 12px;
+                                            }
+                                        }
+                                    }
+                                    .activity {
+                                        position: relative;
+                                        .order-num {
+                                            color: #bac1ce;
+                                            button {
+                                                background: #fff;
+                                                border: $border;
+                                                line-height: 20px;
+                                                color: #becbe3;
+                                                margin-left: 10px;
+                                                border-radius: 4px;
+                                                &::before {
+                                                    margin-right: 10px;
+                                                }
+                                            }
+                                        }
+                                        p {
+                                            font-size: 14px;
+                                            color: #bac1ce;
+                                            span {
+                                                margin-left: 30px;
+                                                color: #696969;
+                                            }
+                                        }
+                                        // 订单hover
+                                        .hoverOrder-wrapper {
+                                            width: 410px;
+                                            padding: 10px;
+                                            border: $border;
+                                            background: #fff;
+                                            position: absolute;
+                                            left: 60px;
+                                            top: -101px;
+                                            z-index: 99;
+                                            opacity: 0;
+                                            transform: translate(0, 0);
+                                            -webkit-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                            -o-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                            -moz-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                            transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                            .hover-content {
+                                                padding: 14px 20px;
+                                                background: #f5f8fb;
+                                                border: $border;
+                                                img {
+                                                    width: 44px;
+                                                    height: 44px;
+                                                    border-radius: 22px;
+                                                    margin-right: 14px;
+                                                    float: left;
+                                                }
+                                                p {
+                                                    width: calc(100% - 58px);
+                                                    line-height: 24px;
+                                                    float: left;
+                                                    color: #696969;
+                                                    span {
+                                                        margin: 0;
+                                                        em {
+                                                            font-style: normal;
+                                                            margin: 0 10px;
+                                                        }
+
+                                        em:last-child{
+                                            margin: 0 0 0 10px;
+                                        }
+                                                    }
+                                                }
+                                            }
+                                            .triangle-up {
+                                                width: 0;
+                                                height: 0;
+                                                border-left: 6px solid transparent;
+                                                border-right: 6px solid transparent;
+                                                border-bottom: 13px solid #fff;
+                                                position: absolute;
+                                                right: 102px;
+                                                top: -8px;
+                                                z-index: 14;
+                                            }
+                                            .triangle-up2 {
+                                                width: 0;
+                                                height: 0;
+                                                border-left: 6px solid transparent;
+                                                border-right: 6px solid transparent;
+                                                border-bottom: 10px solid #f6f6f6;
+                                                position: absolute;
+                                                right: 102px;
+                                                top: -10px;
+                                                z-index: 11;
+                                            }
+                                        }
+                                        .hoverActive {
+                                            opacity: 1;
+                                            transform: translate(-20%, 0);
+                                            -webkit-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                            -o-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                            -moz-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                            transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                        }
+                                    }
+                                }
+                                // 中
+                                .price {
+                                    display: inline-block;
+                                    text-align: right;
+                                    p {
+                                        span {
+                                            color: #2f3a4d;
+                                            font-size: 16px;
+                                        }
+                                        em {
+                                            font-style: normal;
+                                            font-size: 12px;
+                                            color: #a9c1ce;
+                                        }
+
+                                        em:last-child{
+                                            margin: 0 0 0 10px;
+                                        }
+                                        .total {
+                                            margin-right: 16px;
+                                        }
+                                        .yuan {
+                                            margin-left: 16px;
+                                        }
+                                    }
+                                    .actual-pay {
+                                        span {
+                                            font-size: 12px;
+                                            color: #696969;
+                                        }
+                                    }
+                                }
+                                // 右边按钮
+                                .type-btn {
+                                    text-align: right;
+                                    .pay-way1 {
+                                        position: relative;
+                                        .yuan {
+                                            right: 5px;
+                                            top: 5px;
+                                            font-style: normal;
+                                            position: absolute;
+                                        }
+                                    }
+                                    .live-pay,
+                                    .type-code {
+                                        width: 104px;
+                                        height: 34px;
+                                        background: #ff6c41;
+                                        color: #fff;
+                                        border-radius: 4px;
+                                        margin-left: 14px;
+                                        font-size: 12px;
+                                        text-align: center;
+                                        margin-top: 20px;
+                                        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+                                    }
+                                    .type-code {
+                                        width: 104px;
+                                        height: 34px;
+                                        background: #ff6c41;
+                                        color: #fff;
+                                        border-radius: 4px;
+                                        margin-left: 14px;
+                                        font-size: 12px;
+                                        border: none;
+                                        background: $light;
+                                        line-height: 34px;
+                                    }
+                                    .type-code-input {
+                                        background: none;
+                                        border: $border;
+                                        color: $main1;
+                                        font-size: 14px;
+                                        -webkit-transition: all ease-in-out 0.1s;
+                                        -o-transition: all ease-in-out 0.1s;
+                                        -moz-transition: all ease-in-out 0.1s;
+                                        transition: all ease-in-out 0.1s;
+                                    }
+                                    .typeFalse {
+                                        border-color: #f3cbb7;
+                                        box-shadow: 0px 2px 2px 1px #f3cbb7;
+                                    }
+                                    .orderOver {
+                                        background: #b4c0c7;
+                                    }
+                                    .box-picker {
+                                        margin-top: 26px;
+                                        display: block;
+                                        font-size: 14px;
+                                        width: 104px;
+                                        height: 56px;
+                                        border: $border;
+                                        border-radius: 4px;
+                                        background: #fff;
+                                        box-shadow: $shadow;
+                                        color: $main1;
+                                        p {
+                                            font-size: 12px;
+                                            color: $main2;
+                                        }
+                                    }
+                                    .ok-code {
+                                        background: #85aabc;
+                                        padding: 0;
+                                        text-align: center;
+                                    }
+                                    .md-primary {
+                                        background: none;
+                                        color: $main1;
+                                        width: 104px;
+                                        padding: 6px 0;
+                                        height: 62px;
+                                        .box-style {
+                                            font-size: 12px;
+                                            display: block;
+                                            line-height: 16px;
+                                            color: #696969;
+                                        }
+                                    }
+                                    .md-primary:hover {
+                                        background: #4fbeff;
+                                        height: 62px;
+                                        span {
+                                            color: #fff;
+                                        }
+                                    }
+                                    .localToPay {
+                                        background: #ff6c41;
+                                    }
+                                    .localPay {
+                                        background: #85aabc;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 2.点餐确认
+    .food-confirm-wrapper {
+        padding: 20px;
+        height: calc(100% - 62px);
+        overflow: auto;
+        background-color: #fff;
+        .food-list {
+            ul {
+                li {
+                    margin-bottom: 20px;
+                    .food-header {
+                        background-color: #f6f9fb;
+                        line-height: 38px;
+                        height: 38px;
+                        padding: 0 10px;
+                        border: $border;
+                        position: relative;
+                        p {
+                            font-size: 12px;
+                            display: inline-block;
+                            line-height: 38px;
+                        }
+                        [data-icon]::before {
+                            margin-right: 10px;
+                        }
+                        .print {
+                            font-size: 12px;
+                            color: #2f3a4d;
+                            margin-right: 12px;
+                        }
+                        .time {
+                            color: #2f3a4d;
+                            letter-spacing: 1px;
+                        }
+                    }
+                    .food-body {
+                        border: $border;
+                        padding: 20px;
+                        width: 100%;
+                        border-top: none;
+                        position: relative;
+                        min-height: 156px;
+                        .order-info {
+                            .food-item {
+                                .order-num {
+                                    color: #becbe3;
+                                    width: 100%;
+                                    margin-bottom: 8px;
+                                    .hoverLnk {
+                                        cursor: pointer;
+                                        padding: 4px;
+                                        margin-left: 17px;
+                                        color: #696969;
+                                    }
+                                    .hoverLnk:hover {
+                                        background: #fff;
+                                        border: $border;
+                                    }
+                                    button {
+                                        background: #fff;
+                                        border: $border;
+                                        line-height: 20px;
+                                        color: #696969;
+                                        margin-left: 10px;
+                                        border-radius: 4px;
+                                        &::before {
+                                            margin-right: 10px;
+                                        }
+                                    }
+                                    button:hover {
+                                        background: #8090ab;
+                                        color: #fff;
+                                    }
+                                }
+                                // 订单hover
+                                .hoverOrder-wrapper {
+                                    width: 410px;
+                                    padding: 10px;
+                                    border: $border;
+                                    background: #fff;
+                                    position: absolute;
+                                    left: 0;
+                                    top: 54px;
+                                    z-index: 9;
+                                    opacity: 0;
+                                    transform: translate(30%, 0);
+                                    -webkit-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                    -o-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                    -moz-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                    transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                    .hover-content {
+                                        padding: 14px 20px;
+                                        background: #f5f8fb;
+                                        border: $border;
+                                        color: #696969;
+                                        img {
+                                            width: 44px;
+                                            height: 44px;
+                                            border-radius: 22px;
+                                            margin-right: 14px;
+                                            float: left;
+                                        }
+                                        p {
+                                            width: calc(100% - 58px);
+                                            line-height: 24px;
+                                            float: left;
+                                            color: #696969;
+                                            span {
+                                                em {
+                                                    font-style: normal;
+                                                    margin: 0 0 0 10px;
+                                                }
+
+                                        em:last-child{
+                                            margin: 0 0 0 10px;
+                                        }
+                                            }
+                                        }
+                                    }
+                                    .triangle-up {
+                                        width: 0;
+                                        height: 0;
+                                        border-left: 6px solid transparent;
+                                        border-right: 6px solid transparent;
+                                        border-bottom: 13px solid #fff;
+                                        position: absolute;
+                                        left: 60px;
+                                        top: -8px;
+                                        z-index: 14;
+                                    }
+                                    .triangle-up2 {
+                                        width: 0;
+                                        height: 0;
+                                        border-left: 6px solid transparent;
+                                        border-right: 6px solid transparent;
+                                        border-bottom: 10px solid #f6f6f6;
+                                        position: absolute;
+                                        left: 60px;
+                                        top: -10px;
+                                        z-index: 11;
+                                    }
+                                }
+                                .hoverActive {
+                                    // display: block;
+                                    opacity: 1;
+                                    transform: translate(0, 0);
+                                    -webkit-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                    -o-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                    -moz-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                    transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                }
+                                >p {
+                                    font-size: 14px;
+                                    color: #d0d6df;
+                                    float: left;
+                                }
+                                ul {
+                                    width: 85%;
+                                    display: inline-block;
+                                    margin-left: 20px;
+                                    li {
+                                        font-size: 14px;
+                                        float: left;
+                                        color: #696969;
+                                        width: 134px;
+                                        margin-bottom: 4px;
+                                        margin-right: 90px;
+                                        .food-name {
+                                            width: 100px;
+                                            color: #696969;
+                                        }
+                                        em {
+                                            width: 20px;
+                                            margin: 0 10px;
+                                            font-style: normal;
+                                            text-align: right;
+                                        }
+
+                                        em:last-child{
+                                            margin: 0 0 0 10px;
+                                        }
+                                        span {
+                                            text-align: right;
+                                        }
+                                    }
+                                }
+                                .attention {
+                                    float: left;
+                                    display: block;
+                                    width: 100%;
+                                    span {
+                                        margin-left: 20px;
+                                        color: #696969;
+                                    }
+                                }
+                            }
+                        }
+                        .relevance-box {
+                            .box-num {
+                                font-size: 14px;
+                                height: 62px;
+                                border: $border;
+                                border-radius: 4px;
+                                background: #fff;
+                                color: #2f3a4d;
+                                text-align: center;
+                                padding-top: 10px;
+                                position: absolute;
+                                right: 20px;
+                                top: 20px;
+                                width: 104px;
+                                p {
+                                    font-size: 12px;
+                                    color: #85aabc;
+                                }
+                            }
+                            button {
+                                width: 104px;
+                                height: 34px;
+                                background: $light;
+                                color: #fff;
+                                border-radius: 4px;
+                                margin-left: 14px;
+                                font-size: 12px;
+                                border: none;
+                                background: #4dc1ff;
+                                position: absolute;
+                                bottom: 20px;
+                                right: 20px;
+                                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+                            }
+                            .send-out {
+                                background: #b4c0c7;
+                                cursor: auto;
+                                box-shadow: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 3.退款退订
+    .refund-wrapper {
+        padding: 20px;
+        height: calc(100% - 62px);
+        overflow: auto;
+        background-color: #fff;
+        // 退餐
+        .food-list {
+            ul {
+                li {
+                    margin-bottom: 20px;
+                    .food-header {
+                        background-color: #f6f9fb;
+                        line-height: 38px;
+                        height: 38px;
+                        padding: 0 10px;
+                        border: $border;
+                        position: relative;
+                        p {
+                            font-size: 12px;
+                            display: inline-block;
+                            line-height: 38px;
+                        }
+                        .time {
+                            color: #2f3a4d;
+                            letter-spacing: 1px;
+                        }
+                        [data-icon]::before {
+                            margin-right: 10px;
+                        }
+                        .print {
+                            font-size: 12px;
+                            color: #2f3a4d;
+                            margin-right: 12px;
+                        }
+                    }
+                    .food-body {
+                        border: $border;
+                        padding: 20px;
+                        width: 100%;
+                        border-top: none;
+                        position: relative;
+                        min-height: 156px;
+                        .order-info {
+                            .food-item {
+                                .order-num {
+                                    color: #becbe3;
+                                    width: 100%;
+                                    margin-bottom: 8px;
+                                    font-size: 14px;
+                                    .hoverLnk {
+                                        cursor: pointer;
+                                        padding: 4px;
+                                        margin-left: 17px;
+                                        color: #696969;
+                                    }
+                                    .hoverLnk:hover {
+                                        background: #fff;
+                                        border: $border;
+                                    }
+                                    button {
+                                        background: #fff;
+                                        border: $border;
+                                        line-height: 20px;
+                                        color: #696969;
+                                        margin-left: 10px;
+                                        border-radius: 4px;
+                                        &::before {
+                                            margin-right: 10px;
+                                        }
+                                    }
+                                    button:hover {
+                                        background: #8090ab;
+                                        color: #fff;
+                                    }
+                                }
+                                // 订单hover
+                                .hoverOrder-wrapper {
+                                    width: 410px;
+                                    padding: 10px;
+                                    border: $border;
+                                    background: #fff;
+                                    position: absolute;
+                                    left: 38px;
+                                    top: 54px;
+                                    z-index: 9;
+                                    opacity: 0;
+                                    transform: translate(30%, 0);
+                                    -webkit-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                    -o-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                    -moz-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                    transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                    .hover-content {
+                                        padding: 14px 20px;
+                                        background: #f5f8fb;
+                                        border: $border;
+                                        img {
+                                            width: 44px;
+                                            height: 44px;
+                                            border-radius: 22px;
+                                            margin-right: 14px;
+                                            float: left;
+                                        }
+                                        p {
+                                            width: calc(100% - 58px);
+                                            line-height: 24px;
+                                            float: left;
+                                            span {
+                                                em {
+                                                    font-style: normal;
+                                                    margin: 0 10px;
+                                                }
+
+                                        em:last-child{
+                                            margin: 0 0 0 10px;
+                                        }
+                                            }
+                                        }
+                                    }
+                                    .triangle-up {
+                                        width: 0;
+                                        height: 0;
+                                        border-left: 6px solid transparent;
+                                        border-right: 6px solid transparent;
+                                        border-bottom: 13px solid #fff;
+                                        position: absolute;
+                                        left: 60px;
+                                        top: -8px;
+                                        z-index: 14;
+                                    }
+                                    .triangle-up2 {
+                                        width: 0;
+                                        height: 0;
+                                        border-left: 6px solid transparent;
+                                        border-right: 6px solid transparent;
+                                        border-bottom: 10px solid #f6f6f6;
+                                        position: absolute;
+                                        left: 60px;
+                                        top: -10px;
+                                        z-index: 11;
+                                    }
+                                }
+                                .hoverActive {
+                                    opacity: 1;
+                                    transform: translate(0, 0);
+                                    -webkit-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                    -o-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                    -moz-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                    transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                }
+                                >p {
+                                    font-size: 14px;
+                                    color: #becbe3;
+                                    float: left;
+                                    margin-right: 20px;
+                                }
+                                .food {
+                                    margin-right: 20px;
+                                }
+                                ul {
+                                    width: 85%;
+                                    float: left;
+                                    li {
+                                        font-size: 14px;
+                                        float: left;
+                                        color: $main2;
+                                        width: 134px;
+                                        margin-bottom: 4px;
+                                        margin-right: 90px;
+                                        .food-name {
+                                            width: 100px;
+                                            color: #696969;
+                                        }
+                                        em {
+                                            width: 20px;
+                                            margin: 0 10px;
+                                            font-style: normal;
+                                            text-align: right;
+                                            color: #696969;
+                                        }
+                                        em:last-child{
+                                            margin: 0 0 0 10px;
+                                        }
+                                        span {
+                                            text-align: right;
+                                            color: #696969;
+                                        }
+                                    }
+                                }
+                                .attention {
+                                    float: left;
+                                    margin-bottom: 20px;
+                                    display: block;
+                                    width: 100%;
+                                    margin-top: 10px;
+                                    span {
+                                        margin-left: 20px;
+                                        color: #696969;
+                                    }
+                                }
+                            }
+                        }
+                        .relevance-box {
+                            .box-num {
+                                font-size: 14px;
+                                height: 62px;
+                                border: $border;
+                                border-radius: 4px;
+                                background: #fff;
+                                color: #2f3a4d;
+                                text-align: center;
+                                padding-top: 10px;
+                                position: absolute;
+                                right: 20px;
+                                top: 20px;
+                                width: 104px;
+                                p {
+                                    font-size: 12px;
+                                    color: #85aabc;
+                                }
+                            }
+                            button {
+                                width: 104px;
+                                height: 34px;
+                                background: $light;
+                                color: #fff;
+                                border-radius: 4px;
+                                margin-left: 14px;
+                                font-size: 12px;
+                                border: none;
+                                background: #85aabc;
+                                position: absolute;
+                                bottom: 20px;
+                                right: 20px;
+                                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+                            }
+                            .refund-btn {
+                                right: 142px;
+                                background: #ff6c41;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // 退订
+        .refund-list {
+            background-color: #fff;
+            ul {
+                li {
+                    margin-bottom: 20px;
+                    .order-header {
+                        background-color: #e5edf1;
+                        line-height: 38px;
+                        height: 38px;
+                        padding: 0 10px;
+                        border: $border;
+                        position: relative;
+                        p {
+                            font-size: 12px;
+                            display: inline-block;
+                            line-height: 38px;
+                        }
+                        .time {
+                            color: #2f3a4d;
+                            letter-spacing: 1px;
+                        }
+                        [data-icon]::before {
+                            margin-right: 10px;
+                        }
+                        .print {
+                            font-size: 12px;
+                            color: #2f3a4d;
+                            margin-right: 12px;
+                        }
+                    }
+                    .order-body {
+                        border: $border;
+                        padding: 20px;
+                        width: 100%;
+                        border-top: none;
+                        position: relative;
+                        // 左1
+                        .order-info {
+                            display: inline-block;
+                            .user-info {
+                                margin-bottom: 30px;
+                                img {
+                                    width: 46px;
+                                    height: 46px;
+                                    border-radius: 23px;
+                                    border: $border;
+                                    margin-right: 16px;
+                                }
+                                div {
+                                    display: inline-block;
+                                    vertical-align: top;
+                                    padding-top: 7px;
+                                    p {
+                                        color: #2f3a4d;
+                                    }
+                                    .name {
+                                        color: #a9c1ce;
+                                        font-size: 12px;
+                                    }
+                                }
+                            }
+                            .activity {
+                                p {
+                                    font-size: 14px;
+                                    color: #bac1ce;
+                                    span {
+                                        margin-left: 30px;
+                                        color: #696969;
+                                    }
+                                }
+                                .order-num {
+                                    color: #becbe3;
+                                    width: 100%;
+                                    margin-bottom: 8px;
+                                    .hoverLnk {
+                                        cursor: pointer;
+                                        margin-left: 30px;
+                                    }
+                                    .hoverLnk:hover {
+                                        background: #fff;
+                                        border: $border;
+                                    }
+                                    button {
+                                        background: #fff;
+                                        border: $border;
+                                        line-height: 20px;
+                                        color: #becbe3;
+                                        margin-left: 10px;
+                                        border-radius: 4px;
+                                        &::before {
+                                            margin-right: 10px;
+                                        }
+                                    }
+                                    button:hover {
+                                        background: #8090ab;
+                                    }
+                                }
+                                // 订单hover
+                                .hoverOrder-wrapper {
+                                    width: 410px;
+                                    padding: 10px;
+                                    border: $border;
+                                    background: #fff;
+                                    position: absolute;
+                                    left: 0;
+                                    top: -4px;
+                                    z-index: 9;
+                                    opacity: 0;
+                                    transform: translate(30%, 0);
+                                    -webkit-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                    -o-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                    -moz-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                    transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                    .hover-content {
+                                        padding: 14px 20px;
+                                        background: #f5f8fb;
+                                        border: $border;
+                                        img {
+                                            width: 44px;
+                                            height: 44px;
+                                            border-radius: 22px;
+                                            margin-right: 14px;
+                                            float: left;
+                                        }
+                                        p {
+                                            width: calc(100% - 58px);
+                                            line-height: 24px;
+                                            float: left;
+                                            span {
+                                                em {
+                                                    font-style: normal;
+                                                    margin: 0 10px;
+                                                }
+
+                                        em:last-child{
+                                            margin: 0 0 0 10px;
+                                        }
+                                            }
+                                        }
+                                    }
+                                    .triangle-up {
+                                        width: 0;
+                                        height: 0;
+                                        border-left: 6px solid transparent;
+                                        border-right: 6px solid transparent;
+                                        border-top: 13px solid #fff;
+                                        position: absolute;
+                                        left: 60px;
+                                        bottom: -8px;
+                                        z-index: 14;
+                                    }
+                                    .triangle-up2 {
+                                        width: 0;
+                                        height: 0;
+                                        border-left: 6px solid transparent;
+                                        border-right: 6px solid transparent;
+                                        border-top: 10px solid #f6f6f6;
+                                        position: absolute;
+                                        left: 60px;
+                                        bottom: -10px;
+                                        z-index: 11;
+                                    }
+                                }
+                                .hoverActive {
+                                    opacity: 1;
+                                    transform: translate(0, 0);
+                                    -webkit-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                    -o-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                    -moz-transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                    transition: all cubic-bezier(0.25, 0.8, 0.25, 1) 0.8s;
+                                }
+                            }
+                        }
+                        // 中
+                        .price {
+                            display: inline-block;
+                            text-align: right;
+                            p {
+                                span {
+                                    color: #2f3a4d;
+                                    font-size: 16px;
+                                }
+                                em {
+                                    font-style: normal;
+                                    font-size: 12px;
+                                    color: #a9c1ce;
+                                }
+
+                                        em:last-child{
+                                            margin: 0 0 0 10px;
+                                        }
+                                .total {
+                                    margin-right: 16px;
+                                }
+                                .yuan {
+                                    margin-left: 16px;
+                                }
+                            }
+                            .actual-pay {
+                                span {
+                                    font-size: 12px;
+                                    color: #696969;
+                                }
+                            }
+                        }
+                        // 右边按钮
+                        .type-btn {
+                            .live-pay,
+                            .type-code {
+                                width: 104px;
+                                height: 34px;
+                                background: #ff6c41;
+                                color: #fff;
+                                border-radius: 4px;
+                                margin-left: 14px;
+                                font-size: 12px;
+                            }
+                            .type-code {
+                                width: 104px;
+                                height: 34px;
+                                background: #ff6c41;
+                                color: #fff;
+                                border-radius: 4px;
+                                margin-left: 14px;
+                                font-size: 12px;
+                                border: none;
+                                padding-left: 8px;
+                                background: $light;
+                            }
+                            .type-code-input {
+                                background: none;
+                                border: $border;
+                                color: $main1;
+                                font-size: 14px;
+                                -webkit-transition: all ease-in-out 0.1s;
+                                -o-transition: all ease-in-out 0.1s;
+                                -moz-transition: all ease-in-out 0.1s;
+                                transition: all ease-in-out 0.1s;
+                            }
+                            .typeFalse {
+                                border-color: #f3cbb7;
+                                box-shadow: 0px 2px 2px 1px #f3cbb7;
+                            }
+                            .box-picker {
+                                margin-top: 26px;
+                                display: block;
+                                font-size: 14px;
+                                width: 104px;
+                                height: 56px;
+                                border: $border;
+                                border-radius: 4px;
+                                background: #fff;
+                                box-shadow: $shadow;
+                                color: $main1;
+                                p {
+                                    font-size: 12px;
+                                    color: $main2;
+                                }
+                            }
+                            .ok-code {
+                                background: #85aabc;
+                            }
+                            .md-primary {
+                                float: right;
+                                background: none;
+                                margin: 20px 0 0 0;
+                                color: $main1;
+                                width: 104px;
+                                padding-bottom: 10px;
+                                .box-style {
+                                    font-size: 12px;
+                                    display: block;
+                                    line-height: 16px;
+                                    color: $main2;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .noRefund{
+        
+    }
+
+}
+// 弹窗
+.order-dialog-wrapper {
+    md-dialog-content {
+        .md-box-list {
+            background-color: #f6f9fb;
+            border: $border;
+            padding: 20px;
+            ul {
+                margin-right: -12px;
+                li {
+                    margin-right: 12px;
+                    border: $border;
+                    // display: inline-block;
+                    margin-bottom: 20px;
+                    float: left;
+                    button {
+                        color: $main1;
+                        background: #fff;
+                        background-color: #fff;
+                        padding: 10px 40px;
+                        height: 56px;
+                        border-radius: 4px;
+                        p {
+                            font-size: 12px;
+                            color: $main2;
+                        }
+                    }
+                    &.getBox button {
+                        background-color: #4dc1ff!important;
+                        color: #fff;
+                        p {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    md-dialog-actions {
+        .md-button {
+            background-color: #4dc1ff!important;
+            color: #fff;
+        }
+    }
+}
+.food-dialog-wrapper {
+    md-dialog-content {
+        .md-box {
+            width: 640px;
+            padding: 0;
+            .foodConfirm-header {
+                background-color: #f6f9fb;
+                line-height: 38px;
+                height: 38px;
+                padding: 0 10px;
+                border: $border;
+                p {
+                    font-size: 12px;
+                    display: inline-block;
+                    line-height: 38px;
+                }
+                .time {
+                    color: #2f3a4d;
+                    letter-spacing: 1px;
+                }
+                .order-num {
+                    color: #becbe3;
+                    button {
+                        background: #fff;
+                        border: $border;
+                        line-height: 20px;
+                        color: #becbe3;
+                        margin-left: 10px;
+                        &::before {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+            .foodConfirm-body {
+                border: $border;
+                padding: 20px;
+                width: 100%;
+                border-top: none;
+                // 左1
+                .order-info {
+                    display: inline-block;
+                    .user-info {
+                        margin-bottom: 30px;
+                        img {
+                            width: 46px;
+                            height: 46px;
+                            border-radius: 23px;
+                            border: $border;
+                            margin-right: 16px;
+                        }
+                        div {
+                            display: inline-block;
+                            vertical-align: top;
+                            padding-top: 7px;
+                            p {
+                                color: #2f3a4d;
+                            }
+                            .name {
+                                color: #a9c1ce;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                    .activity {
+                        p {
+                            font-size: 14px;
+                            color: #bac1ce;
+                            span {
+                                margin-left: 30px;
+                                color: #696969;
+                            }
+                        }
+                    }
+                }
+                // 中
+                .price {
+                    text-align: right;
+                    p {
+                        display: inline-block;
+                        span {
+                            font-size: 16px;
+                        }
+                        em {
+                            font-style: normal;
+                            font-size: 12px;
+                        }
+
+                                        em:last-child{
+                                            margin: 0 0 0 10px;
+                                        }
+                        .total {
+                            margin-right: 6px;
+                        }
+                        .yuan {
+                            margin-left: 6px;
+                        }
+                    }
+                    .actual-pay {
+                        margin-left: 16px;
+                        span {
+                            font-size: 12px;
+                        }
+                    }
+                    button {
+                        border: $border;
+                        background: none;
+                        width: 86px;
+                        height: 36px;
+                        margin-left: 16px;
+                        color: #2f3a4d;
+                        cursor: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+.refund-dialog-wrapper {
+    md-dialog-content {
+        background: #f5f8fb;
+        h1 {
+            font-size: 14px;
+            i {
+                width: 16px;
+                height: 16px;
+                display: inline-block;
+                background: url(../img/attention.png);
+                background-size: 100%;
+                vertical-align: sub;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+.refuseRefund-dialog-wrapper {
+    md-dialog-content {
+        padding: 0!important;
+        h1 {
+            font-size: 14px;
+            color: #767676;
+        }
+        textarea {
+            background: #f5f8fb;
+            padding: 20px;
+            width: 460px;
+            height: 80px;
+            border: $border;
+            resize: none;
+        }
+        p {
+            font-size: 12px;
+            color: #f87737;
+        }
+    }
+    .refuseRefundbtn {
+        background: #4dc1ff!important;
+        span {
+            color: #fff;
+        }
+    }
+}
+.order-footer {
+    background-color: #f6f9fb;
+    line-height: 38px;
+    height: 38px;
+    padding: 0 10px;
+    border: $border;
+    position: relative;
+    p {
+        font-size: 12px;
+        display: inline-block;
+        line-height: 38px;
+        &::before {
+            color: #2f3a4d;
+        }
+    }
+    .time {
+        color: #2f3a4d;
+    }
+    .order-num {
+        color: #2f3a4d;
+        .tap {
+            color: #ff6600;
+            line-height: 22px;
+            font-size: 16px;
+            i {
+                width: 88px;
+                height: 22px;
+                display: inline-block;
+                background: url(../img/tap.png) no-repeat;
+                color: #fff;
+                vertical-align: middle;
+                padding-left: 10px;
+                font-size: 12px;
+            }
+        }
+    }
+}
