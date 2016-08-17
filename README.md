@@ -1,20 +1,30 @@
 # AngularJs+require.js+gulp 项目框架Example
-=================
 
 New dashboard created using angularAMD+RequireJs+Angular-Material
 
-## Development
-To setup and run this project, do the following:
 
+## How to use
+
+To setup and run this project, do the following:
+First, you should clone the repo and install the dependencies.
+
+```bash
+$ npm install
+$ bower install
 ```
-npm install
-bower install
-npm start
+
+Then, launch the project app.
+
+```bash
+$ npm start
 ```
+
 
 ## release file
 To create release file under the current directory.
 This will allow to release.
+You should see a new browser tap opening and a page of "index.html" in http://127.0.0.1:8888.
+
 
 To create release file under the current directory, do the following:
 
