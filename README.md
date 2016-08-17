@@ -2,6 +2,8 @@
 
 New dashboard created using angularAMD+RequireJs+Angular-Material
 
+![image](https://raw.githubusercontent.com/allan2coder/AngularJs-requirejs-gulp-scss/master/dev/img/screenshot.png)
+
 
 ## How to use
 
