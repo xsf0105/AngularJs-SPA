@@ -52,11 +52,6 @@ define(['js/common/constant.js', 'socket.io'], function(CONSTANT, io) {
 						console.log(2);
 					}
 				},
-
-
-
-
-
 				getCookies: function (cookiename){
 					var value = document.cookie.match(new RegExp("(^| )" + cookiename + "=([^;]*)(;|$)"));
 					return null != value ? decodeURIComponent(value[2]) : null;
@@ -104,7 +99,7 @@ define(['js/common/constant.js', 'socket.io'], function(CONSTANT, io) {
 				getUserInfo: function() {
 					var userInfoStr = sessionStorage.getItem('userInfo');
 					if (userInfoStr === null) {
-						location.href = 'login.html';
+						// location.href = 'login.html';
 					} else {
 						return JSON.parse(userInfoStr);		/* JSON 字符串转换成对象*/
 					}

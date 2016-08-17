@@ -1,23 +1,23 @@
 
 <div class="order">
     <!-- 时间选择器 -->
-    <div class="time-picker datepickerdemoBasicUsage" ng-show="!flag">
+<!--     <div class="time-picker datepickerdemoBasicUsage" ng-show="!flag">
         <md-content>
-            <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+            <md-datepicker ng-model="myDate" md-placeholder="datapicker"></md-datepicker>
         </md-content>
-    </div>
+    </div> -->
     <!-- 4种状态选项卡 -->
     <div class="order-wrapper">
         <div class="order-nav">
             <ul>
                 <li data-ui-sref="micWebsite.add1">
-                    <md-button ng-if="!isTabActive('add1')">预订确认</md-button>
-                    <span ng-if="isTabActive('add1')">预订确认</span>
+                    <md-button ng-if="!isTabActive('add1')">tab1</md-button>
+                    <span ng-if="isTabActive('add1')">tab1</span>
                     <!-- <i class="dot"></i> -->
                 </li>
                 <li data-ui-sref="micWebsite.add2">
-                    <md-button ng-if="!isTabActive('foodConfirm')">test1</md-button>
-                    <span ng-if="isTabActive('foodConfirm')">test2</span>
+                    <md-button ng-if="!isTabActive('foodConfirm')">tab2</md-button>
+                    <span ng-if="isTabActive('foodConfirm')">tab2</span>
                     <i></i>
                 </li>
             </ul>

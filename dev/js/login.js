@@ -31,14 +31,14 @@ require(['constant'], function(CONSTANT) {
 						sessionStorage.setItem('userInfo', JSON.stringify(response.data));
 						var a = sessionStorage.getItem('userInfo');
 						console.log(a);
-						location.href = '/index.html';
+						// location.href = '/index.html';
 					} else {
 						alert(response.msg);
 					}
 				}
 			}
 		//xmlhttp.open('POST', CONSTANT.SERVER_HOST + '/back/seller/signin.do?userName=' + userName + '&passwd=' + passWord, true);
-		xmlhttp.open('GET',CONSTANT.SERVER_HOST + '/login?username=' + userName +'&password=' + passWord, true);
+		// xmlhttp.open('GET',CONSTANT.SERVER_HOST + '/login?username=' + userName +'&password=' + passWord, true);
 		xmlhttp.send();
 	}
 
