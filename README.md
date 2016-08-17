@@ -21,12 +21,9 @@ Then, launch the project app.
 $ npm start
 ```
 
-
-## release file
-To create release file under the current directory.
-This will allow to release.
 You should see a new browser tap opening and a page of "index.html" in http://127.0.0.1:8888.
 
+## release file
 
 To create release file under the current directory, do the following:
 
