@@ -2,8 +2,6 @@
 
 New dashboard created using angularAMD+RequireJs+Angular-Material
 
-![image](https://raw.githubusercontent.com/allan2coder/weixinApp/master/image/screenshot.png)
-
 
 ## How to use
 
